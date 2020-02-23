@@ -67,7 +67,7 @@
 
 *** Requirements
 
-    - [ ] 4 sections: who you are, your history, what you have to
+    - [x] 4 sections: who you are, your history, what you have to
       offer, important points about you
     - [ ] 1 Ugly CSS theme
     - [ ] 1 good CSS theme
