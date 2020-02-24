@@ -70,7 +70,6 @@ body {
     "nav nav nav nav"
     ". main sidebar ."
     "footer footer footer footer";
-  /* grid-gap: 1em 1em; */
   background-image: url("/img/StarfieldSimulation.gif");
   background-size: auto;
   color: var(--off-white);
@@ -189,8 +188,6 @@ footer {
   -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
 }
-
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 
 .tab-in {
   padding: 1.5em;
