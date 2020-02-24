@@ -14,9 +14,9 @@
 
   --black: #000;
   --yellow: #ffec99;
-  --orange: #db9641;
-  --off-white: #fcfaeb;
-  --blue: #809bce;
+  --orange: #b86c0f;
+  --off-white: #fff;
+  --blue: #3b68bb;
 }
 
 html,
@@ -62,21 +62,22 @@ body {
   width: 100%;
   margin: 0em;
   display: grid;
-  grid-template-columns: [first] 2% [start-content] auto [start-sidebar] 20% [end-sidebar] 2% [end];
-  grid-template-rows: [first] 500px [start-main] auto [start-footer] 100px [end];
+  grid-template-columns: [first] 2% [start-content] auto [start-sidebar] 22% [end-sidebar] 2% [end];
+  grid-template-rows: [first] 40px [start-header] 500px [start-nav] 50px [start-main] auto [start-footer] 80px [end];
   grid-template-areas:
+    "topbar topbar topbar topbar"
     "header header header header"
+    "nav nav nav nav"
     ". main sidebar ."
     "footer footer footer footer";
-  grid-gap: 1em 1em;
+  /* grid-gap: 1em 1em; */
 }
 
 header {
   display: flex;
   justify-content: center;
-  margin-bottom: 2em;
-  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+  background-color: var(--blue);
+  color: var(--off-white);
 }
 
 .vertical-flex {
@@ -90,8 +91,31 @@ img {
   height: 100%;
 }
 
+nav > ul {
+  font-size: var(--small);
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 10px 0;
+}
+
+li > a {
+  color: var(--black);
+  text-decoration: none;
+  margin: 0 1em 0em 1em;
+}
+
+li a:hover {
+  color: var(--orange);
+}
+
 #header {
   grid-area: header;
+}
+
+#nav {
+  grid-area: nav;
 }
 
 #main {
@@ -108,5 +132,39 @@ img {
 
 section {
   margin: 0em 0em 1em 0em;
-  padding: 0.5em;
+  padding: 1em;
+}
+
+aside {
+  padding: 1em;
+}
+
+nav {
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+}
+
+#topbar,
+footer {
+  position: relative;
+  z-index: 10;
+  grid-area: topbar;
+  background-color: var(--orange);
+  background-image: url("/img/wood-pattern.png");
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
+.tab-in {
+  padding: 1.5em;
+}
+
+#offers > h3 {
+  padding-left: 25px;
+}
+
+#offers > p {
+  padding-left: 3em;
 }
