@@ -1,0 +1,205 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --xx-small: 1em;
+  --x-small: 1.1em;
+  --small: 1.5em;
+  --medium: 2.2em;
+  --large: 3em;
+  --x-large: 4.23em;
+  --xx-large: 5.92em;
+
+  --black: #000;
+  --yellow: #ffec99;
+  --orange: #b86c0f;
+  --off-white: #fff;
+  --blue: #3b68bb;
+}
+
+html,
+body {
+  font-family: "Gothic A1";
+  background-color: var(--off-white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0em 0em 0em 0em;
+}
+
+h1 {
+  font-size: var(--xx-large);
+  margin-top: 0.25em;
+}
+
+h2 {
+  font-size: var(--x-large);
+}
+
+h3 {
+  font-size: var(--large);
+}
+
+h4 {
+  font-size: var(--medium);
+}
+
+h5 {
+  font-size: var(--small);
+}
+
+p {
+  font-size: var(--x-small);
+}
+
+body {
+  width: 100%;
+  margin: 0em;
+  display: grid;
+  grid-template-columns: [first] 2% [start-content] auto [start-sidebar] 22% [end-sidebar] 2% [end];
+  grid-template-rows: [first] 40px [start-header] 500px [start-nav] 50px [start-main] auto [start-footer] 80px [end];
+  grid-template-areas:
+    "topbar topbar topbar topbar"
+    "header header header header"
+    "nav nav nav nav"
+    ". main sidebar ."
+    "footer footer footer footer";
+  /* grid-gap: 1em 1em; */
+  background-image: url("/img/StarfieldSimulation.gif");
+  background-size: auto;
+  color: var(--off-white);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  background-color: var(--yellow);
+  color: var(--off-white);
+}
+
+.vertical-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Rainbow text by: https://w3bits.com/rainbow-text/ */
+.vertical-flex h1 {
+  background-image: linear-gradient(
+    to left,
+    violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.vertical-flex h4 {
+  -webkit-text-stroke: 1px black;
+}
+
+@keyframes nudge-left {
+  from {
+    padding-top: 800px;
+  }
+  to {
+    padding-top: 0px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: 100%;
+  animation-name: nudge-left;
+  animation-duration: 2s;
+}
+
+nav > ul {
+  font-size: var(--small);
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 10px 0;
+}
+
+li > a {
+  color: var(--off-white);
+  text-decoration: none;
+  margin: 0 1em 0em 1em;
+}
+
+li a:hover {
+  color: var(--orange);
+}
+
+#header {
+  grid-area: header;
+}
+
+#nav {
+  grid-area: nav;
+}
+
+#main {
+  grid-area: main;
+}
+
+#sidebar {
+  grid-area: sidebar;
+}
+
+#footer {
+  grid-area: footer;
+}
+
+section {
+  margin: 0em 0em 1em 0em;
+  padding: 1em;
+}
+
+aside {
+  padding: 1em;
+}
+
+nav {
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+}
+
+#topbar,
+footer {
+  position: relative;
+  z-index: 10;
+  grid-area: topbar;
+  background-color: purple;
+  background-image: url("/img/wood-pattern.png");
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
+.tab-in {
+  padding: 1.5em;
+}
+
+#offers > h3 {
+  padding-left: 25px;
+}
+
+#offers > p {
+  padding-left: 3em;
+}
